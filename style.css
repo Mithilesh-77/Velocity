@@ -1,0 +1,3519 @@
+
+/* =========================================
+   VELOCITY — COMPLETE WEBSITE STYLESHEET
+   Luxury | Silver | Black | Futuristic
+========================================= */
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --silver: #c8cdd2;
+    --muted: #929ba5;
+    --black: #08090b;
+    --white: #f2f3f4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.85),
+        transparent
+    );
+}
+
+.logo {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #929ba5;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 38px;
+}
+
+.navbar nav a {
+    color: #d0d3d6;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: white;
+}
+
+.nav-button {
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 13px 22px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: #d8dce0;
+    color: #08090b;
+}
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.hero {
+    min-height: 760px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #08090b;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url(
+        'https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=2200&q=90'
+    );
+
+    background-position: center 55%;
+    background-size: cover;
+
+    transform: scale(1.02);
+    animation: heroReveal 1.8s ease both;
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,4,6,0.94),
+            rgba(3,4,6,0.65) 42%,
+            rgba(3,4,6,0.08)
+        ),
+        linear-gradient(
+            0deg,
+            #08090b,
+            transparent 30%,
+            rgba(0,0,0,0.2)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin-left: 10%;
+    margin-top: 55px;
+    max-width: 650px;
+    animation: contentReveal 1.3s ease both;
+}
+
+.eyebrow {
+    color: #aeb5bd;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(65px, 8.5vw, 118px);
+    line-height: 0.98;
+    letter-spacing: -5px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #aeb5bd;
+    text-shadow: 0 0 35px rgba(255,255,255,0.12);
+}
+
+.hero-description {
+    color: #b8bdc3;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 400px;
+    margin-top: 27px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 38px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 23px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: 0.35s;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, #f0f1f2, #929ba5);
+    color: #08090b;
+    border: 1px solid #e2e5e8;
+}
+
+.primary-button:hover {
+    background: white;
+    box-shadow: 0 0 30px rgba(220,225,230,0.25);
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.secondary-button:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #a1a7ae;
+    font-size: 9px;
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 18px;
+}
+
+
+/* =========================================
+   SHARED BUTTONS AND FOOTER
+========================================= */
+
+footer {
+    min-height: 110px;
+    padding: 30px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #050607;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer p {
+    color: #747c85;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.footer-contact {
+    color: #d5d9dd;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   COLLECTION PAGE
+   FUTURISTIC SHOWROOM ATMOSPHERE
+========================================= */
+
+body.collection-page {
+    min-height: 100vh;
+
+    background-color: #07090c;
+
+    background-image:
+
+        /* Ceiling LED light reflections */
+        linear-gradient(
+            180deg,
+            rgba(220,235,255,0.12) 0%,
+            transparent 20%
+        ),
+
+        /* Cool silver showroom lighting */
+        radial-gradient(
+            ellipse at 50% 5%,
+            rgba(165,190,220,0.20),
+            transparent 45%
+        ),
+
+        /* Left architectural light */
+        radial-gradient(
+            ellipse at 5% 35%,
+            rgba(115,145,180,0.13),
+            transparent 35%
+        ),
+
+        /* Right architectural light */
+        radial-gradient(
+            ellipse at 95% 45%,
+            rgba(115,145,180,0.12),
+            transparent 35%
+        ),
+
+        /* Showroom photograph */
+        linear-gradient(
+            rgba(3,5,8,0.58),
+            rgba(3,5,8,0.82)
+        ),
+        url(
+            "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=2200&q=90"
+        );
+
+    background-size:
+        cover,
+        cover,
+        cover,
+        cover,
+        cover,
+        cover;
+
+    background-position:
+        center,
+        center top,
+        left center,
+        right center,
+        center,
+        center;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* SHOWROOM LIGHT STRIPS */
+
+.collection-page .gallery-intro {
+    position: relative;
+    min-height: 430px;
+
+    padding: 165px 9% 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,5,8,0.55),
+            rgba(5,7,10,0.72)
+        );
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Decorative LED ceiling strips */
+
+.gallery-intro::before {
+    content: "";
+    position: absolute;
+    top: 105px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(225,240,255,0.9),
+        transparent
+    );
+
+    box-shadow:
+        0 0 12px rgba(190,220,255,0.9),
+        0 0 35px rgba(150,190,255,0.45);
+
+    opacity: 0.8;
+}
+
+/* Showroom floor reflection */
+
+.gallery-intro::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 65px;
+
+    background: linear-gradient(
+        0deg,
+        rgba(190,210,235,0.13),
+        transparent
+    );
+
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.gallery-intro > div,
+.gallery-intro-description {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-intro h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+    font-weight: 800;
+    text-shadow: 0 5px 25px rgba(0,0,0,0.6);
+}
+
+.gallery-intro h1 span {
+    color: #aeb9c5;
+}
+
+.gallery-intro-description {
+    max-width: 300px;
+    color: #d0d5dc;
+    font-size: 13px;
+    line-height: 2;
+    padding-bottom: 8px;
+}
+
+
+/* =========================================
+   PREMIUM VEHICLE GALLERY
+========================================= */
+
+.premium-gallery {
+    position: relative;
+
+    padding: 85px 9% 110px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 55px 30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5,7,10,0.65),
+            rgba(5,7,10,0.83)
+        );
+}
+
+.premium-car {
+    min-width: 0;
+
+    background: linear-gradient(
+        145deg,
+        rgba(38,45,54,0.85),
+        rgba(7,9,12,0.96)
+    );
+
+    border: 1px solid rgba(220,230,245,0.16);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.premium-car:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(220,235,255,0.5);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,0.6),
+        0 0 25px rgba(170,200,235,0.10);
+}
+
+
+/* CAR PHOTOGRAPHY */
+
+.premium-car-image {
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    background: #171a1f;
+}
+
+.premium-car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    filter: brightness(0.82) contrast(1.08);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+.premium-car:hover .premium-car-image img {
+    transform: scale(1.055);
+    filter: brightness(1) contrast(1.05);
+}
+
+/* Light over car photography */
+
+.premium-car-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.12),
+        transparent 35%,
+        rgba(0,0,0,0.4)
+    );
+
+    pointer-events: none;
+}
+
+
+/* VEHICLE LABEL */
+
+.car-index {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 2;
+
+    padding: 10px 14px;
+
+    background: rgba(0,0,0,0.65);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: #e5e8eb;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* VEHICLE INFORMATION */
+
+.premium-car-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 23px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    gap: 15px;
+}
+
+.premium-car-info p {
+    color: #aab5c1;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.premium-car-info h2 {
+    color: #f1f2f3;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.premium-car-info a {
+    color: #d5d9dd;
+    text-decoration: none;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 7px;
+
+    transition: 0.3s;
+}
+
+.premium-car-info a:hover {
+    color: white;
+    border-color: white;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   COLLECTION BOTTOM BANNER
+========================================= */
+
+.gallery-bottom {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(105,125,150,0.25),
+            rgba(7,9,12,0.96) 70%
+        );
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.gallery-bottom > p {
+    color: #aeb9c5;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.gallery-bottom h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.gallery-bottom h2 span {
+    color: #929ba5;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+@keyframes contentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .premium-gallery {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .premium-car-image {
+        height: 260px;
+    }
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 75px;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-bottom span:nth-child(2) {
+        display: none;
+    }
+
+    .gallery-intro {
+        min-height: 430px;
+        display: block;
+        padding: 140px 7% 55px;
+    }
+
+    .gallery-intro h1 {
+        letter-spacing: -3px;
+    }
+
+    .gallery-intro-description {
+        margin-top: 30px;
+    }
+
+    .premium-gallery {
+        grid-template-columns: 1fr;
+        padding: 55px 7% 75px;
+        gap: 40px;
+    }
+
+    .premium-car-image {
+        height: 250px;
+    }
+
+    .premium-car-info h2 {
+        font-size: 17px;
+    }
+
+    .gallery-bottom {
+        padding: 75px 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* =================================
+   VELOCITY 3D ROTATING SHOWROOM
+================================= */
+
+.rotation-showroom {
+    min-height: 850px;
+    padding: 155px 8% 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 42%, rgba(120,150,190,0.22), transparent 48%),
+        linear-gradient(180deg, #10151d, #050609 75%);
+}
+
+.rotation-heading .eyebrow {
+    color: #b7c5d8;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+.rotation-heading h1 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(35px, 5vw, 65px);
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.rotation-heading h1 span {
+    color: #aabbd0;
+}
+
+.rotation-heading > p:last-child {
+    color: #929ba8;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.car-rotation {
+    height: 390px;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.rotation-stage {
+    position: relative;
+    width: min(780px, 75%);
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.rotation-glow {
+    position: absolute;
+    width: 75%;
+    height: 65%;
+    top: 8%;
+    background: radial-gradient(ellipse, rgba(175,200,235,0.23), transparent 70%);
+    filter: blur(25px);
+}
+
+.rotation-car {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.rotation-car img {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 25px rgba(0,0,0,0.8));
+    transition: transform 0.5s ease;
+}
+
+.rotation-car.changing {
+    opacity: 0;
+    transform: scale(0.88) rotateY(15deg);
+}
+
+.rotation-floor {
+    position: absolute;
+    bottom: 13px;
+    width: 85%;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(170,195,225,0.25);
+    filter: blur(25px);
+}
+
+.rotate-btn {
+    width: 54px;
+    height: 54px;
+    border: 1px solid rgba(210,225,245,0.35);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.rotate-btn:hover {
+    background: white;
+    color: #080b10;
+    transform: scale(1.1);
+}
+
+.rotation-details {
+    margin-top: -5px;
+    position: relative;
+    z-index: 3;
+}
+
+.car-counter {
+    color: #8393a9;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.car-category {
+    color: #aabbd0;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.rotation-details h2 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 2px;
+}
+
+.car-description {
+    color: #9ba4b1;
+    font-size: 13px;
+    margin: 14px auto 25px;
+}
+
+.rotation-controls {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 55px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    color: #778493;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .rotation-showroom {
+        padding: 130px 5% 55px;
+        min-height: 750px;
+    }
+
+    .car-rotation {
+        height: 300px;
+    }
+
+    .rotation-stage {
+        width: 78%;
+        height: 280px;
+    }
+
+    .rotation-car img {
+        height: 250px;
+    }
+
+    .rotate-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .rotation-controls {
+        font-size: 7px;
+        gap: 10px;
+    }
+}
+
+/* PREMIUM 3D SHOWROOM EFFECT */
+
+.rotation-stage {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.rotation-car {
+    transform-style: preserve-3d;
+    animation: carShowcase 5s ease-in-out infinite;
+}
+
+.rotation-car img {
+    transform: rotateY(-8deg) translateZ(35px);
+    filter:
+        drop-shadow(0 20px 25px rgba(0,0,0,0.8))
+        drop-shadow(0 0 18px rgba(160,190,230,0.18));
+}
+
+@keyframes carShowcase {
+    0%, 100% {
+        transform: rotateY(-3deg) translateY(0);
+    }
+    50% {
+        transform: rotateY(3deg) translateY(-8px);
+    }
+}
+
+.rotation-glow {
+    animation: showroomGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes showroomGlow {
+    from {
+        opacity: 0.55;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+.rotation-floor {
+    box-shadow: 0 0 45px rgba(150,185,225,0.2);
+}
+
+/* =================================
+   VELOCITY EXPERIENCE PAGE
+================================= */
+
+.experience-page {
+    background: #07090d;
+    color: white;
+}
+
+/* HERO */
+
+.experience-hero {
+    min-height: 720px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background:
+        linear-gradient(90deg, rgba(3,5,8,0.95), rgba(3,5,8,0.35)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=90");
+    background-size: cover;
+    background-position: center;
+}
+
+.experience-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #07090d 0%, transparent 35%);
+}
+
+.experience-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    animation: experienceReveal 1s ease;
+}
+
+.experience-content .eyebrow {
+    color: #b9c8db;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.experience-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.experience-content h1 span {
+    color: #aebed2;
+}
+
+.experience-content > p:not(.eyebrow) {
+    color: #c1c6cf;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 440px;
+    margin: 25px 0 35px;
+}
+
+.experience-bottom {
+    position: absolute;
+    bottom: 45px;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+    color: #c2cbd7;
+    font-size: 10px;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 20px;
+}
+
+/* STORY SECTION */
+
+.experience-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 120px 10%;
+    background: #090c12;
+}
+
+.experience-story-image {
+    min-height: 430px;
+    background:
+        linear-gradient(0deg, rgba(5,7,10,0.2), transparent),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1300&q=85");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.experience-story-content .eyebrow {
+    color: #9eafc5;
+    letter-spacing: 4px;
+    font-size: 10px;
+    margin-bottom: 25px;
+}
+
+.experience-story-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+}
+
+.experience-story-content h2 span {
+    color: #9eafc5;
+}
+
+.experience-story-content > p:not(.eyebrow) {
+    color: #a3abb7;
+    line-height: 1.9;
+    font-size: 13px;
+    margin: 25px 0 30px;
+}
+
+.experience-story-content .secondary-button {
+    display: inline-block;
+}
+
+/* VALUES */
+
+.experience-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 90px 10%;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(120,150,190,0.13), transparent 60%),
+        #07090d;
+}
+
+.experience-values article {
+    padding: 35px 25px;
+    border-top: 1px solid rgba(180,200,230,0.3);
+    transition: 0.3s ease;
+}
+
+.experience-values article:hover {
+    background: rgba(255,255,255,0.035);
+    transform: translateY(-6px);
+}
+
+.experience-values article span {
+    color: #879bb5;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.experience-values h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 25px 0 15px;
+}
+
+.experience-values p {
+    color: #929ba8;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+@keyframes experienceReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    .experience-hero {
+        min-height: 680px;
+        height: auto;
+        padding: 160px 7% 120px;
+    }
+
+    .experience-bottom {
+        left: 7%;
+        right: 7%;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .experience-story {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 75px 7%;
+    }
+
+    .experience-story-image {
+        min-height: 280px;
+    }
+
+    .experience-values {
+        grid-template-columns: 1fr;
+        padding: 60px 7%;
+        gap: 10px;
+    }
+}
+
+/* =================================
+   VELOCITY TECHNOLOGY PAGE
+================================= */
+
+.technology-page {
+    background: #07090d;
+    color: #fff;
+}
+
+/* HERO */
+
+.technology-hero {
+    min-height: 750px;
+    height: 100vh;
+    padding: 140px 9% 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 75% 45%, rgba(70,105,150,0.22), transparent 45%),
+        linear-gradient(110deg, #080b10, #111923 55%, #050609);
+}
+
+.technology-hero-content {
+    max-width: 570px;
+    position: relative;
+    z-index: 2;
+    animation: technologyReveal 1s ease;
+}
+
+.technology-hero-content .eyebrow {
+    color: #aabbd0;
+    letter-spacing: 5px;
+    font-size: 10px;
+    margin-bottom: 25px;
+}
+
+.technology-hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+}
+
+.technology-hero-content h1 span {
+    color: #a9bbd2;
+}
+
+.technology-hero-content > p:not(.eyebrow) {
+    color: #aab3c0;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 420px;
+    margin: 25px 0 35px;
+}
+
+/* FUTURISTIC VISUAL */
+
+.technology-visual {
+    width: 390px;
+    height: 390px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-circle {
+    position: absolute;
+    border: 1px solid rgba(165,195,235,0.3);
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 100%;
+    height: 100%;
+    animation: techRotate 18s linear infinite;
+}
+
+.circle-two {
+    width: 75%;
+    height: 75%;
+    border-style: dashed;
+    animation: techRotateReverse 14s linear infinite;
+}
+
+.circle-three {
+    width: 50%;
+    height: 50%;
+    border-color: rgba(190,215,250,0.5);
+    box-shadow: 0 0 40px rgba(130,170,220,0.15);
+}
+
+.tech-core {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #34465c, #101721);
+    border: 1px solid rgba(200,220,255,0.5);
+    box-shadow: 0 0 60px rgba(130,175,230,0.25);
+}
+
+.tech-core span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #d7e5f5;
+}
+
+.tech-label {
+    position: absolute;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #b8c8dc;
+}
+
+.label-one {
+    top: 4%;
+    right: -5%;
+}
+
+.label-two {
+    bottom: 9%;
+    left: -12%;
+}
+
+.label-three {
+    right: -10%;
+    bottom: 25%;
+}
+
+.technology-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 9%;
+    right: 9%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 18px;
+    color: #8493a7;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* INNOVATION */
+
+.innovation-section {
+    padding: 110px 9%;
+    background: #090c12;
+}
+
+.innovation-heading {
+    max-width: 650px;
+    margin-bottom: 60px;
+}
+
+.innovation-heading .eyebrow {
+    color: #9eafc5;
+    letter-spacing: 4px;
+    font-size: 10px;
+    margin-bottom: 20px;
+}
+
+.innovation-heading h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+}
+
+.innovation-heading h2 span {
+    color: #9eafc5;
+}
+
+.innovation-heading > p:last-child {
+    color: #929ba8;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.innovation-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.09);
+    padding-bottom: 28px;
+    transition: 0.35s ease;
+}
+
+.innovation-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(170,195,230,0.45);
+}
+
+.innovation-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
+}
+
+.image-engine {
+    background-image:
+        linear-gradient(rgba(5,8,12,0.15), rgba(5,8,12,0.25)),
+        url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=85");
+}
+
+.image-design {
+    background-image:
+        linear-gradient(rgba(5,8,12,0.15), rgba(5,8,12,0.25)),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85");
+}
+
+.image-future {
+    background-image:
+        linear-gradient(rgba(5,8,12,0.15), rgba(5,8,12,0.25)),
+        url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=900&q=85");
+}
+
+.innovation-card > span,
+.innovation-card h3,
+.innovation-card p {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.innovation-card > span {
+    color: #9eafc5;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.innovation-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.innovation-card p {
+    color: #929ba8;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* FINAL STATEMENT */
+
+.technology-statement {
+    text-align: center;
+    padding: 100px 7%;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(100,140,190,0.17), transparent 65%),
+        #06080c;
+}
+
+.technology-statement > p {
+    color: #a9bbd2;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.technology-statement h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 5vw, 58px);
+    margin-bottom: 30px;
+}
+
+.technology-statement h2 span {
+    color: #a9bbd2;
+}
+
+/* ANIMATIONS */
+
+@keyframes techRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes techRotateReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes technologyReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .technology-hero {
+        height: auto;
+        min-height: 850px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 55px;
+        padding: 150px 7% 100px;
+    }
+
+    .technology-visual {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-label {
+        font-size: 7px;
+    }
+
+    .innovation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .innovation-section {
+        padding: 75px 7%;
+    }
+
+    .technology-bottom {
+        left: 7%;
+        right: 7%;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+}
+
+/* =====================================================
+   VELOCITY — FINAL LAYOUT REPAIRS
+   HOME PAGE + CONTACT PAGE + RESPONSIVE FIXES
+   Add this section at the VERY END of style.css
+===================================================== */
+
+/* GLOBAL SAFETY */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* NAVIGATION FIX */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 95px;
+    height: auto;
+    z-index: 50;
+}
+
+.navbar nav {
+    align-items: center;
+}
+
+.navbar nav a {
+    white-space: nowrap;
+}
+
+/* =====================================================
+   HOME PAGE — HERO LAYOUT
+===================================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 760px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #08090b;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-position: center 55%;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,4,6,0.96),
+            rgba(3,4,6,0.68) 42%,
+            rgba(3,4,6,0.12)
+        ),
+        linear-gradient(
+            0deg,
+            #08090b,
+            transparent 35%,
+            rgba(0,0,0,0.2)
+        );
+}
+
+/* SPEED LINES */
+
+.speed-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.16;
+    background: repeating-linear-gradient(
+        110deg,
+        transparent 0,
+        transparent 100px,
+        rgba(200,220,245,0.16) 101px,
+        transparent 103px
+    );
+}
+
+/* LIGHT TRAILS */
+
+.light-trail {
+    position: absolute;
+    z-index: 2;
+    height: 2px;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(200,225,255,0.8),
+        transparent
+    );
+    box-shadow: 0 0 15px rgba(170,205,255,0.6);
+    opacity: 0.65;
+}
+
+.light-trail-one {
+    width: 45%;
+    right: 0;
+    bottom: 29%;
+    animation: trailMove 5s ease-in-out infinite;
+}
+
+.light-trail-two {
+    width: 30%;
+    right: 8%;
+    bottom: 24%;
+    opacity: 0.35;
+    animation: trailMove 7s ease-in-out infinite reverse;
+}
+
+@keyframes trailMove {
+    0%, 100% {
+        transform: translateX(25px);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateX(-25px);
+        opacity: 0.8;
+    }
+}
+
+/* HOME CAR ANIMATION */
+
+.car-animation {
+    position: absolute;
+    z-index: 3;
+    width: min(48vw, 680px);
+    right: 3%;
+    bottom: 13%;
+    pointer-events: none;
+    animation: homeCarEntrance 1.25s ease-out both;
+}
+
+.animated-car {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 25px rgba(0,0,0,0.65));
+}
+
+.car-shadow {
+    position: absolute;
+    z-index: -1;
+    width: 75%;
+    height: 25px;
+    left: 12%;
+    bottom: 5%;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.8);
+    filter: blur(18px);
+}
+
+@keyframes homeCarEntrance {
+    from {
+        opacity: 0;
+        transform: translate3d(100px,25px,0) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0) scale(1);
+    }
+}
+
+/* HOME TEXT */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    width: min(650px, 78%);
+    margin-left: 10%;
+    margin-top: 45px;
+    animation: contentReveal 1.3s ease both;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-description {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-actions {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.hero-bottom {
+    z-index: 6;
+    pointer-events: none;
+}
+
+.animation-indicator {
+    position: absolute;
+    z-index: 6;
+    right: 7%;
+    bottom: 105px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c5d0dc;
+    font-size: 9px;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+
+.indicator-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #dceaff;
+    box-shadow: 0 0 12px #b9d7ff;
+    animation: indicatorPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page {
+    min-height: 100vh;
+    background: #07090d;
+    color: #f2f3f4;
+}
+
+/* CONTACT HERO */
+
+.contact-hero {
+    min-height: 510px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 180px 9% 85px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,5,8,0.95),
+            rgba(3,5,8,0.58)
+        ),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=90");
+
+    background-size: cover;
+    background-position: center 55%;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        #07090d,
+        transparent 55%
+    );
+    pointer-events: none;
+}
+
+.contact-heading {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.contact-heading .eyebrow {
+    color: #aabbd0;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+.contact-heading h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.contact-heading h1 span {
+    color: #a9bbd2;
+}
+
+.contact-heading > p:not(.eyebrow) {
+    color: #b4bdc9;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 470px;
+    margin-top: 22px;
+}
+
+/* CONTACT MAIN LAYOUT */
+
+.contact-main {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 85px 7% 110px;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 65px;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-information {
+    min-width: 0;
+}
+
+.contact-information .eyebrow {
+    color: #9eafc5;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.contact-information h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    color: #929ba8;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.contact-detail {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.contact-detail h3 {
+    color: #a9bbd2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.contact-detail p,
+.contact-detail a {
+    color: #c0c7d0;
+    font-size: 13px;
+    line-height: 1.8;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-detail a:hover {
+    color: white;
+}
+
+/* CONTACT FORM CONTAINER */
+
+.contact-form-container {
+    min-width: 0;
+    padding: 38px;
+    background: linear-gradient(
+        145deg,
+        rgba(32,40,52,0.8),
+        rgba(8,11,16,0.98)
+    );
+    border: 1px solid rgba(190,210,240,0.17);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.contact-form-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.contact-form-container > p {
+    color: #929ba8;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+/* FORM GRID */
+
+#velocityContactForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+#velocityContactForm .form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+#velocityContactForm .form-group:has(textarea),
+#velocityContactForm .form-group:has(button),
+#velocityContactForm .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+#velocityContactForm label {
+    color: #c7d0dc;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+#velocityContactForm input,
+#velocityContactForm select,
+#velocityContactForm textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 15px;
+    color: #f2f3f4;
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0;
+    outline: none;
+    font-size: 12px;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+#velocityContactForm input::placeholder,
+#velocityContactForm textarea::placeholder {
+    color: #788493;
+}
+
+#velocityContactForm input:focus,
+#velocityContactForm select:focus,
+#velocityContactForm textarea:focus {
+    border-color: #a9bbd2;
+    background: rgba(255,255,255,0.075);
+}
+
+#velocityContactForm select option {
+    background: #10151d;
+    color: white;
+}
+
+#velocityContactForm textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* FORM BUTTON */
+
+#velocityContactForm button,
+#velocityContactForm input[type="submit"] {
+    width: fit-content;
+    min-width: 180px;
+    padding: 16px 25px;
+    border: 1px solid #e0e5eb;
+    background: linear-gradient(135deg, #f0f1f2, #929ba5);
+    color: #08090b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#velocityContactForm button:hover,
+#velocityContactForm input[type="submit"]:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(220,225,230,0.2);
+}
+
+#formStatus {
+    grid-column: 1 / -1;
+    color: #c5d7e9;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 5px;
+}
+
+/* CONTACT BOTTOM */
+
+.contact-bottom {
+    padding: 45px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    color: #8793a2;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =====================================================
+   RESPONSIVE FIXES
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .navbar nav {
+        gap: 14px;
+    }
+
+    .navbar nav a {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .logo {
+        font-size: 21px;
+        letter-spacing: 3px;
+    }
+
+    .contact-main {
+        gap: 35px;
+    }
+
+    .contact-form-container {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .hero-content {
+        margin-left: 7%;
+        width: 65%;
+    }
+
+    .car-animation {
+        width: 55vw;
+        right: -2%;
+        bottom: 14%;
+    }
+
+    .animation-indicator {
+        right: 5%;
+    }
+
+    .contact-main {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 65px 7% 85px;
+    }
+
+    .contact-hero {
+        min-height: 480px;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 75px;
+        min-height: 75px;
+    }
+
+    .navbar nav,
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 760px;
+        height: auto;
+        padding: 150px 0 180px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 88%;
+        margin: 45px 6% 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 13vw, 76px);
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+        max-width: 330px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .car-animation {
+        width: 88%;
+        right: -5%;
+        bottom: 13%;
+    }
+
+    .animated-car {
+        max-height: 230px;
+    }
+
+    .hero-bottom {
+        bottom: 22px;
+        left: 6%;
+        right: 6%;
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .animation-indicator {
+        right: 7%;
+        bottom: 90px;
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .light-trail-one {
+        bottom: 22%;
+    }
+
+    .light-trail-two {
+        bottom: 19%;
+    }
+
+    .contact-hero {
+        min-height: 440px;
+        padding: 145px 7% 65px;
+    }
+
+    .contact-heading h1 {
+        font-size: clamp(45px, 12vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .contact-heading > p:not(.eyebrow) {
+        font-size: 12px;
+    }
+
+    .contact-main {
+        padding: 55px 6% 70px;
+        gap: 35px;
+    }
+
+    .contact-form-container {
+        padding: 23px 18px;
+    }
+
+    #velocityContactForm {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    #velocityContactForm .form-group {
+        grid-column: 1 / -1;
+    }
+
+    .contact-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 6%;
+        font-size: 8px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================================
+   VELOCITY — CINEMATIC MOTION UPGRADE
+   Homepage + Global Animations
+===================================================== */
+
+/* GLOBAL MOTION */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar {
+    z-index: 100;
+    animation: navEntrance 1s ease both;
+}
+
+@keyframes navEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar nav a {
+    position: relative;
+    transition: color 0.35s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    width: 0;
+    height: 1px;
+    background: #dce8f5;
+    transition: width 0.35s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+.nav-button {
+    transition: 0.4s ease;
+}
+
+.nav-button:hover {
+    box-shadow: 0 0 25px rgba(220,230,245,0.2);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   CINEMATIC LOADING INTRO
+===================================================== */
+
+.velocity-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #06080c;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.velocity-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-logo {
+    color: #f2f3f4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 7px;
+    animation: loaderPulse 1.8s ease-in-out infinite;
+}
+
+.loader-logo span {
+    color: #929ba5;
+}
+
+.velocity-loader > p {
+    color: #929ba5;
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 20px;
+}
+
+.loader-line {
+    width: 160px;
+    height: 2px;
+    background: rgba(255,255,255,0.12);
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+.loader-line span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #dce8f5;
+    transform: translateX(-100%);
+    animation: loaderProgress 1.8s ease forwards;
+}
+
+@keyframes loaderProgress {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes loaderPulse {
+    50% {
+        opacity: 0.55;
+    }
+}
+
+/* =====================================================
+   HOMEPAGE HERO MOTION
+===================================================== */
+
+.home-page .hero {
+    isolation: isolate;
+}
+
+.home-page .hero-image {
+    animation: homeBackground 18s ease-in-out infinite alternate;
+}
+
+@keyframes homeBackground {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.09);
+    }
+}
+
+.home-page .hero-shade {
+    z-index: 1;
+}
+
+.home-page .speed-lines {
+    animation: speedLineMovement 12s linear infinite;
+}
+
+@keyframes speedLineMovement {
+    from {
+        transform: translateX(-35px);
+    }
+    to {
+        transform: translateX(35px);
+    }
+}
+
+/* FLOATING CAR */
+
+.home-page .car-animation {
+    animation:
+        homeCarEntrance 1.5s ease-out both,
+        floatingCar 5s ease-in-out 1.5s infinite;
+}
+
+.home-page .animated-car {
+    animation: carLight 5s ease-in-out infinite;
+}
+
+@keyframes floatingCar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes carLight {
+    0%, 100% {
+        filter: drop-shadow(0 25px 25px rgba(0,0,0,0.65));
+    }
+    50% {
+        filter:
+            drop-shadow(0 30px 30px rgba(0,0,0,0.65))
+            drop-shadow(0 0 15px rgba(190,215,245,0.18));
+    }
+}
+
+/* HERO HEADLINE */
+
+.home-page .hero-content {
+    animation: heroTextEntrance 1.4s ease both;
+}
+
+.home-page .hero-content .eyebrow {
+    animation: heroTextEntrance 1s ease both;
+}
+
+.home-page .hero-content h1 {
+    animation: heroTextEntrance 1.3s ease both;
+}
+
+.home-page .hero-description {
+    animation: heroTextEntrance 1.6s ease both;
+}
+
+.home-page .hero-actions {
+    animation: heroTextEntrance 1.9s ease both;
+}
+
+@keyframes heroTextEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FLOATING INFORMATION */
+
+.hero-floating-info {
+    position: absolute;
+    z-index: 6;
+    right: 8%;
+    top: 27%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    animation: floatingInfo 5s ease-in-out infinite;
+}
+
+.floating-info-label {
+    color: #aebdce;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.hero-floating-info strong {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 48px;
+    letter-spacing: -2px;
+}
+
+.hero-floating-info strong span {
+    color: #8b9aaa;
+    font-size: 24px;
+}
+
+.hero-floating-info small {
+    color: #aab3c0;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+@keyframes floatingInfo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* FLOATING PARTICLES */
+
+.floating-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+        radial-gradient(circle, rgba(220,235,255,0.8) 1px, transparent 2px),
+        radial-gradient(circle, rgba(220,235,255,0.5) 1px, transparent 2px);
+    background-size: 130px 130px, 190px 190px;
+    background-position: 0 0, 60px 70px;
+    animation: particleDrift 22s linear infinite;
+}
+
+@keyframes particleDrift {
+    from {
+        background-position: 0 0, 60px 70px;
+    }
+    to {
+        background-position: 130px 260px, 250px 330px;
+    }
+}
+
+/* SCROLL INDICATOR */
+
+.scroll-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 45px;
+    background: linear-gradient(
+        to bottom,
+        rgba(220,235,255,0.8),
+        transparent
+    );
+    animation: scrollLineMove 2s ease-in-out infinite;
+}
+
+@keyframes scrollLineMove {
+    0%, 100% {
+        transform: scaleY(0.6);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* =====================================================
+   HOMEPAGE DISCOVER SECTION
+===================================================== */
+
+.home-discover {
+    position: relative;
+    padding: 120px 8%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(100,130,165,0.13),
+            transparent 55%
+        ),
+        #080a0e;
+}
+
+.discover-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.discover-heading .eyebrow {
+    color: #a9bbd2;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.discover-heading h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(35px, 5vw, 65px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.discover-heading h2 span {
+    color: #9eafc5;
+}
+
+.discover-heading > p:last-child {
+    max-width: 460px;
+    color: #929ba8;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+/* DISCOVER GRID */
+
+.discover-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.discover-card {
+    min-height: 420px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    background: #11151c;
+    border: 1px solid rgba(255,255,255,0.12);
+    isolation: isolate;
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(195,220,250,0.55);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.4);
+}
+
+.discover-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    transition: transform 1s ease;
+}
+
+.discover-card:hover .discover-card-image {
+    transform: scale(1.12);
+}
+
+.discover-image-one {
+    background-image: url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85");
+}
+
+.discover-image-two {
+    background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85");
+}
+
+.discover-image-three {
+    background-image: url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=85");
+}
+
+.discover-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.05) 10%,
+        rgba(0,0,0,0.45) 45%,
+        rgba(0,0,0,0.96) 100%
+    );
+}
+
+.discover-card-content {
+    position: absolute;
+    left: 27px;
+    right: 22px;
+    bottom: 30px;
+    transition: transform 0.5s ease;
+}
+
+.discover-card:hover .discover-card-content {
+    transform: translateY(-8px);
+}
+
+.discover-card-content > span {
+    color: #c0d0e2;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.discover-card-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px;
+    margin: 17px 0 10px;
+    letter-spacing: 1px;
+}
+
+.discover-card-content p {
+    color: #c1c8d1;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.discover-card-content strong {
+    display: inline-block;
+    color: white;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+
+/* =====================================================
+   BRAND STATEMENT
+===================================================== */
+
+.home-statement {
+    min-height: 480px;
+    position: relative;
+    padding: 110px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(110,140,180,0.2),
+            transparent 65%
+        ),
+        #07090d;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.statement-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(130,165,210,0.08);
+    filter: blur(90px);
+    animation: statementGlow 6s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes statementGlow {
+    from {
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+.home-statement > p {
+    position: relative;
+    color: #a9bbd2;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-bottom: 22px;
+}
+
+.home-statement h2 {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(35px, 6vw, 70px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+}
+
+.home-statement h2 span {
+    color: #a9bbd2;
+}
+
+.home-statement .primary-button {
+    position: relative;
+}
+
+/* =====================================================
+   BUTTON MOTION
+===================================================== */
+
+.primary-button,
+.secondary-button,
+.footer-contact {
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        color 0.35s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-5px);
+}
+
+.primary-button span {
+    display: inline-block;
+    transition: transform 0.35s ease;
+}
+
+.primary-button:hover span {
+    transform: translate(4px, -3px);
+}
+
+/* =====================================================
+   FOOTER MOTION
+===================================================== */
+
+.velocity-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.velocity-footer .logo {
+    transition: letter-spacing 0.4s ease;
+}
+
+.velocity-footer .logo:hover {
+    letter-spacing: 6px;
+}
+
+.footer-contact {
+    display: inline-block;
+}
+
+.footer-contact:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   MOBILE MOTION LAYOUT
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .hero-floating-info {
+        right: 6%;
+        top: 24%;
+    }
+
+    .hero-floating-info strong {
+        font-size: 34px;
+    }
+
+    .discover-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .discover-card {
+        min-height: 360px;
+    }
+
+    .discover-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-floating-info {
+        top: auto;
+        bottom: 34%;
+        right: 7%;
+    }
+
+    .hero-floating-info strong {
+        font-size: 25px;
+    }
+
+    .hero-floating-info small {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .hero-floating-info .floating-info-label {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .home-discover {
+        padding: 80px 7%;
+    }
+
+    .discover-heading h2 {
+        font-size: 36px;
+    }
+
+    .discover-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .discover-card,
+    .discover-card:last-child {
+        min-height: 350px;
+        grid-column: auto;
+    }
+
+    .home-statement {
+        min-height: 390px;
+        padding: 80px 6%;
+    }
+
+    .home-statement h2 {
+        font-size: 37px;
+    }
+
+    .scroll-line {
+        display: none;
+    }
+
+    .velocity-loader .loader-logo {
+        font-size: 25px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =====================================================
+   VELOCITY — AMBIENT MOTION UPGRADE
+   Cars remain completely stationary.
+   Environment and lighting stay animated.
+===================================================== */
+
+/* 1. KEEP ALL CARS STATIONARY */
+
+.home-page .car-animation {
+    animation: none !important;
+    transform: none !important;
+}
+
+.home-page .animated-car {
+    animation: none !important;
+    transform: none !important;
+}
+
+.rotation-car {
+    animation: none !important;
+    transform: none !important;
+}
+
+.rotation-car img {
+    animation: none !important;
+    transform: none !important;
+}
+
+.premium-car-image img {
+    transform: none !important;
+}
+
+.premium-car:hover .premium-car-image img {
+    transform: none !important;
+}
+
+/* 2. MOVING HOMEPAGE LIGHTING */
+
+.home-page .hero {
+    isolation: isolate;
+}
+
+.home-page .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    background: linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(190,215,245,0.09) 50%,
+        transparent 70%
+    );
+
+    transform: translateX(-100%);
+    animation: ambientLightSweep 9s ease-in-out infinite;
+}
+
+@keyframes ambientLightSweep {
+    0%, 15% {
+        transform: translateX(-100%);
+    }
+    75%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 3. FLOATING PARTICLES */
+
+.floating-particles {
+    overflow: hidden;
+}
+
+.floating-particles .particle {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #dceaff;
+    box-shadow: 0 0 12px rgba(190,220,255,0.9);
+    opacity: 0;
+    animation: particleFloat 8s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    25% {
+        opacity: 0.8;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(35px, -180px, 0);
+    }
+}
+
+/* 4. FLOATING SHOWROOM GLOW */
+
+.rotation-showroom {
+    isolation: isolate;
+}
+
+.rotation-showroom::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -40%;
+    width: 45%;
+    height: 150%;
+    pointer-events: none;
+    z-index: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(180,210,245,0.07),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    animation: showroomLightSweep 12s linear infinite;
+}
+
+@keyframes showroomLightSweep {
+    from {
+        left: -50%;
+    }
+    to {
+        left: 120%;
+    }
+}
+
+.rotation-heading,
+.car-rotation,
+.rotation-details,
+.rotation-controls {
+    position: relative;
+    z-index: 1;
+}
+
+/* 5. COLLECTION SHOWROOM LIGHTS */
+
+.collection-page .gallery-intro::before {
+    animation: ceilingLightPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes ceilingLightPulse {
+    from {
+        opacity: 0.35;
+        box-shadow: 0 0 8px rgba(190,220,255,0.4);
+    }
+    to {
+        opacity: 1;
+        box-shadow:
+            0 0 18px rgba(190,220,255,0.9),
+            0 0 40px rgba(150,190,255,0.5);
+    }
+}
+
+/* 6. EXPERIENCE PAGE AMBIENT LIGHT */
+
+.experience-hero {
+    isolation: isolate;
+}
+
+.experience-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle at 75% 40%,
+        rgba(150,190,240,0.13),
+        transparent 40%
+    );
+
+    animation: experienceGlow 7s ease-in-out infinite alternate;
+}
+
+@keyframes experienceGlow {
+    from {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* 7. TECHNOLOGY PAGE FLOATING EFFECT */
+
+.technology-visual {
+    animation: technologyFloat 6s ease-in-out infinite;
+}
+
+@keyframes technologyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* 8. CONTACT PAGE AMBIENT LIGHT */
+
+.contact-hero {
+    isolation: isolate;
+}
+
+.contact-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(180,210,245,0.08) 50%,
+        transparent 80%
+    );
+
+    transform: translateX(-100%);
+    animation: contactLightSweep 11s ease-in-out infinite;
+}
+
+@keyframes contactLightSweep {
+    0%, 20% {
+        transform: translateX(-100%);
+    }
+    80%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 9. FLOATING INFORMATION PANEL */
+
+.hero-floating-info {
+    animation: floatingInfo 5s ease-in-out infinite;
+}
+
+/* 10. INTERACTION EFFECTS */
+
+.discover-card,
+.innovation-card,
+.experience-values article,
+.premium-car {
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.discover-card:hover,
+.innovation-card:hover,
+.experience-values article:hover,
+.premium-car:hover {
+    transform: translateY(-7px);
+}
+
+.primary-button,
+.secondary-button,
+.nav-button,
+.rotate-btn {
+    transition: all 0.35s ease;
+}
+
+/* 11. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page .hero::after,
+    .floating-particles .particle,
+    .rotation-showroom::before,
+    .experience-hero::after,
+    .contact-hero::after,
+    .technology-visual {
+        animation: none !important;
+    }
+}
+/* =========================================
+   VELOCITY — VISIBLE FLOATING ANIMATIONS
+   Cars stay completely stationary.
+========================================= */
+
+/* 1. MAKE PARTICLES FLOAT UPWARD */
+
+.floating-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.floating-particles .particle {
+    position: absolute;
+    top: 85%;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 18px #8abfff;
+    opacity: 0;
+    animation: velocityParticleRise 7s linear infinite !important;
+}
+
+@keyframes velocityParticleRise {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate3d(25px, -250px, 0) scale(1.2);
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate3d(-20px, -550px, 0) scale(0.4);
+        opacity: 0;
+    }
+}
+
+/* 2. MOVING LIGHT IN THE HOMEPAGE */
+
+.home-page .hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-page .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(180, 210, 255, 0.13),
+        transparent
+    );
+
+    animation: velocityLightMove 8s ease-in-out infinite;
+}
+
+@keyframes velocityLightMove {
+    0%, 10% {
+        left: -100%;
+    }
+
+    80%, 100% {
+        left: 150%;
+    }
+}
+
+/* 3. FLOATING INFORMATION PANEL */
+
+.hero-floating-info {
+    animation: velocityInfoFloat 4s ease-in-out infinite !important;
+}
+
+@keyframes velocityInfoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* 4. AMBIENT SHOWROOM LIGHT */
+
+.rotation-showroom {
+    position: relative;
+    overflow: hidden;
+}
+
+.rotation-showroom::before {
+    animation: velocityShowroomGlow 8s linear infinite !important;
+}
+
+@keyframes velocityShowroomGlow {
+    0% {
+        left: -50%;
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0.2;
+    }
+}
+
+/* 5. TECHNOLOGY VISUAL MOVEMENT */
+
+.technology-visual {
+    animation: velocityTechFloat 5s ease-in-out infinite !important;
+}
+
+@keyframes velocityTechFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 6. KEEP ALL CARS STATIONARY */
+
+.home-page .car-animation,
+.home-page .animated-car,
+.rotation-car,
+.rotation-car img,
+.premium-car-image img {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* 7. DISABLE MOTION WHEN REQUESTED BY DEVICE */
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-particles .particle,
+    .home-page .hero::after,
+    .hero-floating-info,
+    .rotation-showroom::before,
+    .technology-visual {
+        animation: none !important;
+    }
+}

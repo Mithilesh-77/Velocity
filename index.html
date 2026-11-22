@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELOCITY | The Art of Performance</title>
+    <meta name="description" content="Discover VELOCITY, a world of luxury automotive design, innovation and performance.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+}
+</script>
+
+</head>
+
+
+
+<body class="home-page">
+
+    <!-- LOADING INTRO -->
+    <div class="velocity-loader" id="velocityLoader">
+        <div class="loader-logo">VELO<span>CITY</span></div>
+        <div class="loader-line"><span></span></div>
+        <p>PREPARING THE EXPERIENCE</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo">VELO<span>CITY</span></a>
+
+        <nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="collection.html">COLLECTION</a>
+            <a href="experience.html">EXPERIENCE</a>
+            <a href="technology.html">TECHNOLOGY</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+
+        <a href="collection.html" class="nav-button">
+            EXPLORE CARS ↗
+        </a>
+    </header>
+
+    <main>
+
+        <!-- CINEMATIC HOMEPAGE -->
+        <section class="hero" id="home">
+
+            <div class="hero-image"></div>
+            <div class="hero-shade"></div>
+
+            <!-- ATMOSPHERIC EFFECTS -->
+            <div class="speed-lines"></div>
+            <div class="light-trail light-trail-one"></div>
+            <div class="light-trail light-trail-two"></div>
+            <div class="floating-particles"></div>
+
+            <!-- FLOATING CAR -->
+            <div class="car-animation" id="carAnimation">
+                <div class="car-shadow"></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=85"
+                    alt="Luxury sports car"
+                    class="animated-car"
+                    id="animatedCar"
+                >
+            </div>
+
+            <!-- HERO TEXT -->
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    THE ART OF AUTOMOTIVE EXCELLENCE
+                </p>
+
+                <h1>
+                    BEYOND<br>
+                    <span>ORDINARY.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Where precision meets performance.
+                    Discover a world crafted for those who demand more.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="collection.html" class="primary-button">
+                        DISCOVER COLLECTION <span>↗</span>
+                    </a>
+
+                    <a href="experience.html" class="secondary-button">
+                        OUR EXPERIENCE
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- FLOATING SPECIFICATION -->
+            <div class="hero-floating-info">
+                <span class="floating-info-label">THE VELOCITY STANDARD</span>
+                <strong>01<span>/</span>04</strong>
+                <small>DESIGN · PERFORMANCE · INNOVATION</small>
+            </div>
+
+            <!-- BOTTOM DETAILS -->
+            <div class="hero-bottom">
+                <span>ENGINEERED TO INSPIRE</span>
+                <span>01 / 04</span>
+                <a href="#discover">DISCOVER VELOCITY ↓</a>
+            </div>
+
+            <div class="animation-indicator">
+                <span class="indicator-dot"></span>
+                VELOCITY IN MOTION
+            </div>
+
+            <div class="scroll-line"></div>
+
+        </section>
+
+
+        <!-- DISCOVER SECTION -->
+        <section class="home-discover" id="discover">
+
+            <div class="discover-heading reveal">
+                <p class="eyebrow">A WORLD BEYOND DRIVING</p>
+
+                <h2>
+                    EXPERIENCE<br>
+                    <span>THE EXTRAORDINARY.</span>
+                </h2>
+
+                <p>
+                    Explore a new definition of automotive excellence.
+                    Every detail is designed to create an unforgettable experience.
+                </p>
+            </div>
+
+            <div class="discover-grid">
+
+                <a href="collection.html" class="discover-card reveal">
+                    <div class="discover-card-image discover-image-one"></div>
+                    <div class="discover-card-overlay"></div>
+                    <div class="discover-card-content">
+                        <span>01 / COLLECTION</span>
+                        <h3>THE MACHINES</h3>
+                        <p>Discover exceptional automotive design.</p>
+                        <strong>EXPLORE ↗</strong>
+                    </div>
+                </a>
+
+                <a href="experience.html" class="discover-card reveal">
+                    <div class="discover-card-image discover-image-two"></div>
+                    <div class="discover-card-overlay"></div>
+                    <div class="discover-card-content">
+                        <span>02 / EXPERIENCE</span>
+                        <h3>THE JOURNEY</h3>
+                        <p>Experience the art of performance.</p>
+                        <strong>DISCOVER ↗</strong>
+                    </div>
+                </a>
+
+                <a href="technology.html" class="discover-card reveal">
+                    <div class="discover-card-image discover-image-three"></div>
+                    <div class="discover-card-overlay"></div>
+                    <div class="discover-card-content">
+                        <span>03 / TECHNOLOGY</span>
+                        <h3>THE FUTURE</h3>
+                        <p>Where innovation meets imagination.</p>
+                        <strong>EXPLORE ↗</strong>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- BRAND STATEMENT -->
+        <section class="home-statement reveal">
+            <div class="statement-glow"></div>
+
+            <p>NOT JUST A DRIVE.</p>
+
+            <h2>
+                A STATEMENT<br>
+                OF <span>PERFECTION.</span>
+            </h2>
+
+            <a href="collection.html" class="primary-button">
+                ENTER THE SHOWROOM ↗
+            </a>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="velocity-footer">
+
+        <a href="index.html" class="logo">
+            VELO<span>CITY</span>
+        </a>
+
+        <p>© 2026 VELOCITY. THE ART OF PERFORMANCE.</p>
+
+        <a href="contact.html" class="footer-contact">
+            CONTACT US ↗
+        </a>
+
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
